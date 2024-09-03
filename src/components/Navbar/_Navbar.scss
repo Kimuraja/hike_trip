@@ -1,0 +1,99 @@
+@import '../../variables/background';
+@import '../../variables/breakpoints';
+@import '../../variables/elements';
+@import '../../variables/position';
+@import '../../variables/scale';
+@import '../../variables/typography';
+@import '../../variables/variables';
+
+
+header {
+  @include background(url("../../media/fixed_shape.png"), no-repeat, bottom center, cover );
+  position: relative;
+  @include scale(none, none, 100%, 9rem);
+  @include respond(phone) { height: 12rem }
+  @include respond(tab-port) { height: 13rem }
+  @include respond(ultra-wide) {
+    background-position-y: -4rem;
+    height: 20rem;
+  }
+
+
+  &::after {
+    @include position(block, none, none, none, absolute);
+    left: 0;
+    right: 0;
+    z-index: -5;
+  }
+
+
+  .row {
+    @include position(flex, none, space-between, center, none);
+    .navbar {
+      &--logo {
+        @include scale(1rem 0 0 3rem, none, 40%, 40%);
+        @include respond(phone) { @include scale(2.5rem 0 0 4rem, none, auto, auto) }
+        @include respond(big-desktop) { margin: 2.5rem 0 0 4.7rem }
+        cursor: pointer;
+        transition: all 0.1s;
+        &:hover { opacity: 0.75 }
+      }
+    }
+
+    
+    .nav-list {
+      &__items {
+        @include position(flex, none, flex-end, center, none);
+        margin-top: 2rem;
+        list-style: none;
+      }
+      &__item {
+        display: inline;
+        @include respond(tab-port) { margin-right: 0.2rem }
+        @include respond(tab-land) { margin-right: 2rem }
+      }
+      &__input {
+        @include typography($dark-grey, 200, 1rem, none, none, normal);
+        @include scale(0 1rem 0 0, 0 1rem, 11rem, 3rem);
+        @include background(none, no-repeat, right, 1.5rem);
+        background-image: url("../../media/Search.png");
+        background-color: #c3bfbc;
+        border-radius: 20rem;
+        background-position-x: 7.5rem;
+        border: none;
+      }
+
+      &__link {
+        @include typography($dark-grey, 700, 0.8rem, uppercase, none, 0.2rem);
+        position: relative;
+        transition: all 0.3s;
+        padding-right: 1rem;
+
+        @include respond(tab-port) { font-size: 1rem }
+        @include respond(big-desktop) { font-size: 1.1rem }
+
+        &::before {
+          transition: 0.4s;
+          content: "";
+          position: absolute;
+          background-color: $dark-orange;
+          top: 1.6rem;
+          left: 0;
+          width: 0;
+          height: 0.2rem;
+          @include respond(desktop) { top: 2rem }
+        }
+
+        &:hover {
+          opacity: 1;
+          color: $dark-orange;
+        }
+
+        &:hover::before {
+          width: 90%;
+          @include respond(phone) { width: 85% }
+        }
+      }
+    }
+  }
+}

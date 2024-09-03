@@ -1,0 +1,16 @@
+@mixin typography(
+  $color,
+  $font-weight,
+  $font-size,
+  $text-transform,
+  $text-decoration,
+  $letter-spacing
+) {
+  font-family: "Open Sans", sans-serif;
+  color: $color;
+  font-weight: $font-weight;
+  font-size: $font-size;
+  text-transform: $text-transform;
+  text-decoration: $text-decoration;
+  letter-spacing: $letter-spacing;
+}

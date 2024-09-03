@@ -1,0 +1,89 @@
+@import '../../variables/background';
+@import '../../variables/breakpoints';
+@import '../../variables/elements';
+@import '../../variables/position';
+@import '../../variables/scale';
+@import '../../variables/typography';
+@import '../../variables/variables';
+
+.explore {
+  @include background(url("../../media/hike_bottom.png"), no-repeat, center, cover);
+  position: relative;
+  z-index: 2;
+
+  &__space-top {
+    @include background(url("../../media/shape_top_v2.png"), no-repeat, bottom, cover);
+    @include scale(0, 0, 100%, 5rem);
+    @include respond(phone) { height: 8rem }
+    @include respond(tab-land) { height: 12rem }
+    top: 0;
+    z-index: 2;
+  }
+  &__space-bottom {
+    @include background(url("../../media/shape_bottom.png"), no-repeat, none, cover);
+    @include scale(0, 0, 100%, 2rem);
+    @include respond(phone) { height: 8rem; }
+    bottom: 0;
+  }
+  &__textarea {
+    padding: 0;
+    margin: 10rem 0;
+    z-index: 1;
+    @include position(flex, none, flex-end, center, none);
+    @include respond(tab-port) { margin: 15rem 0 }
+  }
+
+  &__heading {
+    @include typography($light-orange, 800, 3rem, uppercase, none, normal);
+    @include position(flex, column, center, center, none);
+    font-style: italic;
+    text-align: right;
+    float: right;
+    margin: 0rem;
+    padding: 1.5rem;
+    text-shadow: 0.3rem -0.2rem 5px rgba(84, 82, 79, 0.5);
+    background: rgba(255, 255, 255, 0.22);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8.8px);
+    -webkit-backdrop-filter: blur(8.8px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    width: 100%;
+
+    @include respond(phone) {
+      font-size: 4rem;
+      padding: 1.5rem;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.22);
+      border-radius: 10px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(15.1px);
+      -webkit-backdrop-filter: blur(15.1px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    @include respond(tab-port) {
+      @include position(flex, none, flex-end, end, none);
+      width: 100%;
+      font-size: 5rem;
+      margin-right: 2rem;
+      box-shadow: none;
+      background: none;
+      border: none;
+      backdrop-filter: none;
+    }
+    @include respond(tab-land) {
+      font-size: 5rem;
+      margin-right: 3rem;
+    }
+    @include respond(desktop) {
+      font-size: 6rem;
+      margin-right: 6rem;
+    }
+    @include respond(ultra-wide) { font-size: 8rem; }
+  }
+  &__text {
+    color: #54524f;
+    text-decoration: none;
+    text-shadow: 0.3rem -0.2rem 5px rgba(84, 82, 79, 0.5);
+  }
+}

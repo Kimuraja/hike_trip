@@ -1,0 +1,94 @@
+@import '../../variables/background';
+@import '../../variables/breakpoints';
+@import '../../variables/elements';
+@import '../../variables/position';
+@import '../../variables/scale';
+@import '../../variables/typography';
+@import '../../variables/variables';
+
+.offert-down {
+  @include position(flex, column, center, center, none);
+  @include respond(phone) { @include position(inherit, row, flex-start, stretch, none) }
+
+  &__image {
+    margin-bottom: 4rem;
+    @include OffertImageStyle;
+    @include respond(phone) {
+      box-shadow: none;
+      margin: 0;
+      border-radius: 0;
+      width: 50%;
+    }
+  }
+
+  &__section {
+    @include position(flex, column, center, center, none);
+    color: $white;
+    flex: 1;
+
+    @include respond(phone) {
+      text-align: left;
+      flex-direction: row;
+      align-items: stretch;
+    }
+  }
+  &__textarea {
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+      rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    background-color: $light-orange;
+    flex: 1;
+    max-width: 80%;
+    padding: 2rem;
+    border-top-right-radius: 1.5rem;
+    border-top-left-radius: 1.5rem;
+    @include position(flex, column, center, center, none);
+
+    @include respond(phone) {
+      box-shadow: none;
+      text-align: left;
+      border-radius: 0;
+      max-width: 50%;
+      margin: 0;
+    }
+
+    &__content {
+      @include position(flex, column, center, center, none);
+      @include respond(phone) {
+        min-width: 25vw;
+        margin: 1rem 0 1rem 3rem;
+        text-align: start;
+        align-items: start;
+      }
+      @include respond(tab-port) { margin-left: 3rem; }
+      @include respond(tab-land) { margin-left: 6rem; }
+      @include respond(desktop) { margin-left: 10rem; }
+    }
+  }
+  &__heading {
+    @include typography($white, 600, 1.5rem, none, none, normal);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    @include respond(tab-port) { font-size: 2rem; }
+    @include respond(tab-land) { font-size: 3rem; }
+    @include respond(desktop) { font-size: 4rem; }
+  }
+
+  &__description {
+    font-size: 1rem;
+    margin-top: 1rem;
+
+    @include respond(tab-port) {
+      font-weight: 100;
+      font-size: 1.2rem;
+      margin-top: 1.5rem;
+    }
+    @include respond(tab-land) {
+      font-size: 1.5rem;
+      font-weight: 200;
+      max-width: 30vw;
+    }
+  }
+
+  &__button { @include OffertButton }
+}

@@ -1,0 +1,25 @@
+@import './variables/background';
+@import './variables/breakpoints';
+@import './variables/elements';
+@import './variables/position';
+@import './variables/scale';
+@import './variables/typography';
+@import './variables/variables';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  }
+  
+  html {
+    background-color: #fff;
+    font-family: $font-family;
+
+  
+  body{
+    background-color: transparent;
+
+  }
+}

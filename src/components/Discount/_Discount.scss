@@ -1,0 +1,15 @@
+@import '../../variables/background';
+@import '../../variables/breakpoints';
+@import '../../variables/elements';
+@import '../../variables/position';
+@import '../../variables/scale';
+@import '../../variables/typography';
+@import '../../variables/variables';
+@import './OffertDown';
+@import './OffertUp';
+
+
+.container-fluid {
+  margin: 0;
+  padding: 0;
+}

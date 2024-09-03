@@ -1,0 +1,26 @@
+@import '../../variables/background';
+@import '../../variables/breakpoints';
+@import '../../variables/elements';
+@import '../../variables/position';
+@import '../../variables/scale';
+@import '../../variables/typography';
+@import '../../variables/variables';
+
+.opinion {
+  position: relative;
+  margin-top: 5rem;
+  z-index: 10;
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    @include respond(phone) {
+      @include position(inline-flex, row, space-around, none, none);
+      text-align: left;
+    }
+    @include respond(tab-port) { margin: 0 6rem; }
+    @include respond(tab-land) { margin: 0 8rem; }
+  }
+}

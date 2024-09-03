@@ -1,0 +1,120 @@
+@import '../../variables/background';
+@import '../../variables/breakpoints';
+@import '../../variables/elements';
+@import '../../variables/position';
+@import '../../variables/scale';
+@import '../../variables/typography';
+@import '../../variables/variables';
+
+.main {
+  @include background(url("../../media/README.png"), no-repeat, center, cover);
+  margin-top: -9rem;
+
+  &__space-bottom {
+    @include background( url("../../media/shape_bottom.png"), no-repeat, none, cover );
+    @include respond(tab-port) { height: 10rem }
+    @include scale(0, 0, 100%, 8rem);
+    bottom: 0;
+  }
+  &__textarea {
+    @include scale(10rem 1rem 6rem, none, 50vw, none);
+    @include respond(phone) { margin: 15rem 1rem 0rem 3rem }
+    @include respond(tab-port) {
+      margin-left: 4rem;
+      margin: 12rem 1rem 0 4rem;
+    }
+    @include respond(big-desktop) { margin-left: 8rem }
+  }
+
+  &__content {
+    @include position(flex, column, none, flex-start, none);
+    @include respond(tab-port) { max-width: 40vw }
+    max-width: 60vw;
+  }
+
+  &__heading {
+    text-shadow: #d2cfcc 0.3rem -0.3rem 0.3rem;
+    margin-top: 2rem;
+    @include typography($dark-orange, 800, 3rem, uppercase, none, 0.1rem);
+    @include respond(phone) {
+      font-size: 4.5rem;
+      margin: 0;
+    }
+    @include respond(tab-port) {
+      font-size: 4rem;
+      margin-top: 4rem;
+    }
+    @include respond(tab-land) { font-size: 4rem }
+    @include respond(desktop) { font-size: 5rem }
+    @include respond(big-desktop) {
+      font-size: 6rem;
+      max-width: 90%;
+      margin-top: 2rem;
+    }
+  }
+
+  &__text {
+    @include typography($dark-grey, 650, 1rem, uppercase, none, 0.3rem);
+    font-style: italic;
+    @include respond(tab-port) { font-size: 1.2rem; }
+    @include respond(tab-land) { font-size: 1.4rem; }
+    @include respond(desktop) { font-size: 1.5rem; }
+    @include respond(big-desktop) { font-size: 1.6rem; }
+  }
+
+  &__button {
+    @include scale(1.25rem 0 0 0, 0.3rem, 9rem, auto);
+    @include typography(#776c64, 750, 1rem, uppercase, none, normal);
+    background-color: $white;
+    border-radius: 1.5rem;
+    border: none;
+    transition: all 0.3s;
+    @include respond(tab-port) {
+      width: 14rem;
+      margin-top: 1.5rem;
+      font-size: 0.9rem;
+    }
+    @include respond(tab-land) {
+      margin-top: 2rem;
+      font-size: 1rem;
+    }
+    @include respond(desktop) {
+      margin-top: 2.5rem;
+      font-size: 1.25rem;
+    }
+    @include respond(big-desktop) {
+      margin-top: 3rem;
+      font-size: 1.5rem;
+    }
+    &:hover {
+      cursor: pointer;
+      box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+      &:active {
+        box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+          rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+      }
+    }
+  }
+
+  &__description {
+    margin: 1rem 0 5rem;
+    font-style: italic;
+    width: 30vw;
+    display: none;
+
+    @include typography($dark-grey, 400, 0.9rem, none, none, 0.1rem);
+    @include respond(phone) { display: block }
+    @include respond(tab-port) {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
+    @include respond(tab-land) {
+      margin-top: 1.25rem;
+      font-size: 1rem;
+    }
+    @include respond(big-desktop) {
+      margin-top: 1.5rem;
+      font-size: 1.25rem;
+    }
+  }
+}

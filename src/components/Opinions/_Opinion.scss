@@ -1,0 +1,17 @@
+@import '../../variables/background';
+@import '../../variables/breakpoints';
+@import '../../variables/elements';
+@import '../../variables/position';
+@import '../../variables/scale';
+@import '../../variables/typography';
+@import '../../variables/variables';
+
+@import './OpinionCardContent';
+@import './OpinionCard';
+@import './OpinionText';
+
+
+.opinion {
+  @include position(flex, column, center, center, none);
+  background-color: #fff;
+}

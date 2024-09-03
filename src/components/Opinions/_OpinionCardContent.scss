@@ -1,0 +1,33 @@
+@import '../../variables/background';
+@import '../../variables/breakpoints';
+@import '../../variables/elements';
+@import '../../variables/position';
+@import '../../variables/scale';
+@import '../../variables/typography';
+@import '../../variables/variables';
+
+
+.opinion-card {
+  @include position(flex, column, center, center, none);
+  margin-bottom: 2rem;
+
+  &__textarea {
+    max-width: 60vw;
+    @include position(flex, column, center, none, none);
+    @include respond(phone) { margin: 0 2rem; }
+    @include respond(tab-land) { max-width: 30vw; }
+
+    &__heading {
+      text-align: center;
+      @include typography($light-orange, 600, 2rem, none, none, 0.1rem);
+      @include respond(phone) {
+        text-align: left;
+        margin: 0;
+      }
+    }
+    &__description {
+      @include typography(black, normal, 1rem, none, none, 0.1px);
+      margin-top: 1.5rem;
+    }
+  }
+}

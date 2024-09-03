@@ -1,0 +1,20 @@
+@import "../node_modules/bootstrap/scss/bootstrap";
+@import './variables/variables';
+@import './variables/background';
+@import './variables/breakpoints';
+@import './variables/elements';
+@import './variables/position';
+@import './variables/scale';
+@import './variables/typography';
+
+@import './components/Main/Main';
+@import './components/Navbar/Navbar';
+@import './components/Cards/Card';
+@import './components/Cards/CardContent';
+@import './components/Discount/Discount';
+@import './components/Info/Info';
+@import './components/Info/InfoSpan';
+@import './components/ExploreImage/Explore';
+@import './components/Opinions/Opinion';
+@import './components/Newsletter/Newsletter';
+

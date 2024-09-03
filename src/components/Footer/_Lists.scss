@@ -1,0 +1,53 @@
+@import '../../variables/background';
+@import '../../variables/breakpoints';
+@import '../../variables/elements';
+@import '../../variables/position';
+@import '../../variables/scale';
+@import '../../variables/typography';
+@import '../../variables/variables';
+
+
+.list {
+  
+  &__items {
+    @include position(flex, column, center, none, none);
+    list-style: none;
+    transition: all 0.2s;
+    margin-left: 2rem;
+    padding: 0;
+  }
+  
+  &__title {
+    font-weight: 500;
+    margin-top: 2rem;
+
+    @include respond(phone) {
+      font-weight: 100;
+      margin-bottom: 0.5rem;
+      font-size: 2.3rem;
+    }
+  }
+
+  li {
+    padding-top: 0.5rem;
+    transition: all 0.2s;
+
+    &:hover {
+      @include typography($dark-orange, 600, 1.1rem, none, none, normal);
+      cursor: pointer;
+      margin-left: 0.5rem;
+      &:active { margin-left: 0.2rem; }
+    }
+
+    @include respond(phone) {
+      padding-top: 0.8rem;
+      font-size: 1.2rem;
+
+      &:hover {
+        @include typography($dark-orange, 600, 1.2rem, none, none, normal);
+        cursor: pointer;
+        color: $dark-orange;
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+@import '../../variables/background';
+@import '../../variables/breakpoints';
+@import '../../variables/elements';
+@import '../../variables/position';
+@import '../../variables/scale';
+@import '../../variables/typography';
+@import '../../variables/variables';
+
+.opinion-text {
+  margin-top: 7rem;
+  @include position(flex, column, center, center, relative);
+  @include respond(phone) { margin-top: 10rem; }
+
+  &__sign {
+    font-style: italic;
+    @include typography(black, 900, 3rem, none, none, normal);
+    @include respond(phone) { font-size: 5rem; }
+  }
+
+  &__description {
+    @include typography(black, 400, 1rem, none, none, normal);
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    margin-top: -0.8rem;
+
+    @include respond(phone) { font-size: 1.5rem; }
+  }
+
+  &__author {
+    @include typography(black, 700, 1.1rem, none, none, normal);
+    margin-top: 2rem;
+    @include respond(phone) {
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+  }
+
+  &__decoration-leaf-right {
+    position: absolute;
+    top: -5rem;
+    float: right;
+    right: -30rem;
+    rotate: 200deg;
+    z-index: 2;
+    @include respond(phone) {
+      top: -8rem;
+      float: right;
+      right: -15rem;
+      rotate: 200deg;
+    }
+  }
+}

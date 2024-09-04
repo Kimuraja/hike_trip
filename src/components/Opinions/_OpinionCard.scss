@@ -1,8 +1,8 @@
 @import '../../variables/background';
 @import '../../variables/breakpoints';
 @import '../../variables/elements';
-@import '../../variables/position';
-@import '../../variables/scale';
+@import '../../variables/layout';
+@import '../../variables/sizing';
 @import '../../variables/typography';
 @import '../../variables/variables';
 
@@ -12,12 +12,11 @@
   z-index: 10;
 
   &__items {
-    display: flex;
-    flex-direction: column;
+    @include layout(flex, column, unset, unset, initial);
     text-align: center;
 
     @include respond(phone) {
-      @include position(inline-flex, row, space-around, none, none);
+      @include layout(inline-flex, row, space-around, initial, initial);
       text-align: left;
     }
     @include respond(tab-port) { margin: 0 6rem; }

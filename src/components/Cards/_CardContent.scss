@@ -1,16 +1,15 @@
 @import '../../variables/background';
 @import '../../variables/breakpoints';
 @import '../../variables/elements';
-@import '../../variables/position';
-@import '../../variables/scale';
+@import '../../variables/layout';
 @import '../../variables/typography';
 @import '../../variables/variables';
 
 .container {
-  @include position(flex, none, space-around, center, none);
+  @include layout(flex, initial, space-around, center, initial);
 
   .card {
-    @include position(flex, column, center, center, none);
+    @include layout(flex, column, center, center, initial);
     border: none;
     margin-top: 4.7rem;
 
@@ -21,10 +20,10 @@
       max-width: 14rem;
       @include respond(tab-port) { max-width: 21.2rem; }
 
-      &__title { @include typography($white, 600, 1.6rem, none, none, normal); }
+      &__title { @include typography($white, 600, 1.6rem, initial, initial, normal); }
 
       &__text {
-        @include typography($white, 200, 1.2rem, none, none, normal);
+        @include typography($white, 200, 1.2rem, initial, initial, normal);
         margin-top: 0.8rem;
       }
     }

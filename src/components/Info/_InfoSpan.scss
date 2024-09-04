@@ -1,8 +1,8 @@
 @import '../../variables/background';
 @import '../../variables/breakpoints';
 @import '../../variables/elements';
-@import '../../variables/position';
-@import '../../variables/scale';
+@import '../../variables/layout';
+@import '../../variables/sizing';
 @import '../../variables/typography';
 @import '../../variables/variables';
 
@@ -16,12 +16,10 @@
 
     &--button {
       @include typography($white, 600, 1rem, uppercase, none, normal);
-      margin-top: 2rem;
+      @include sizing(2rem 0 0 0, 1.2rem 4rem, initial, initial);
       border: none;
       background-color: $dark-orange;
-      padding: 1.2rem 4rem;
       border-radius: 50rem;
-      text-transform: uppercase;
 
       &:hover {
         cursor: pointer;

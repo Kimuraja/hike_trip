@@ -1,8 +1,8 @@
 @import '../../variables/background';
 @import '../../variables/breakpoints';
 @import '../../variables/elements';
-@import '../../variables/position';
-@import '../../variables/scale';
+@import '../../variables/layout';
+@import '../../variables/sizing';
 @import '../../variables/typography';
 @import '../../variables/variables';
 
@@ -10,7 +10,7 @@
 header {
   @include background(url("../../media/fixed_shape.png"), no-repeat, bottom center, cover );
   position: relative;
-  @include scale(none, none, 100%, 9rem);
+  @include sizing(unset, unset, 100%, 9rem);
   @include respond(phone) { height: 12rem }
   @include respond(tab-port) { height: 13rem }
   @include respond(ultra-wide) {
@@ -20,7 +20,7 @@ header {
 
 
   &::after {
-    @include position(block, none, none, none, absolute);
+    @include layout(block, initial, initial, initial, absolute);
     left: 0;
     right: 0;
     z-index: -5;
@@ -28,11 +28,11 @@ header {
 
 
   .row {
-    @include position(flex, none, space-between, center, none);
+    @include layout(flex, initial, space-between, center, initial);
     .navbar {
       &--logo {
-        @include scale(1rem 0 0 3rem, none, 40%, 40%);
-        @include respond(phone) { @include scale(2.5rem 0 0 4rem, none, auto, auto) }
+        @include sizing(1rem 0 0 3rem, unset, 40%, 40%);
+        @include respond(phone) { @include sizing(2.5rem 0 0 4rem, unset, auto, auto) }
         @include respond(big-desktop) { margin: 2.5rem 0 0 4.7rem }
         cursor: pointer;
         transition: all 0.1s;
@@ -43,7 +43,7 @@ header {
     
     .nav-list {
       &__items {
-        @include position(flex, none, flex-end, center, none);
+        @include layout(flex, initial, flex-end, center, initial);
         margin-top: 2rem;
         list-style: none;
       }
@@ -53,9 +53,9 @@ header {
         @include respond(tab-land) { margin-right: 2rem }
       }
       &__input {
-        @include typography($dark-grey, 200, 1rem, none, none, normal);
-        @include scale(0 1rem 0 0, 0 1rem, 11rem, 3rem);
-        @include background(none, no-repeat, right, 1.5rem);
+        @include typography($dark-grey, 200, 1rem, initial, initial, normal);
+        @include sizing(0 1rem 0 0, 0 1rem, 11rem, 3rem);
+        @include background(initial, no-repeat, right, 1.5rem);
         background-image: url("../../media/Search.png");
         background-color: #c3bfbc;
         border-radius: 20rem;
@@ -64,7 +64,7 @@ header {
       }
 
       &__link {
-        @include typography($dark-grey, 700, 0.8rem, uppercase, none, 0.2rem);
+        @include typography($dark-grey, 700, 0.8rem, uppercase, initial, 0.2rem);
         position: relative;
         transition: all 0.3s;
         padding-right: 1rem;
@@ -79,8 +79,7 @@ header {
           background-color: $dark-orange;
           top: 1.6rem;
           left: 0;
-          width: 0;
-          height: 0.2rem;
+          @include sizing(unset, unset, 0, .2rem);
           @include respond(desktop) { top: 2rem }
         }
 

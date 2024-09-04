@@ -1,8 +1,8 @@
 @import '../../variables/background';
 @import '../../variables/breakpoints';
 @import '../../variables/elements';
-@import '../../variables/position';
-@import '../../variables/scale';
+@import '../../variables/layout';
+@import '../../variables/sizing';
 @import '../../variables/typography';
 @import '../../variables/variables';
 @import "./Lists";
@@ -12,45 +12,33 @@
   background-color: $light-grey;
   &__space-top {
     @include background( url("../../media/shape_top_v2.png"), no-repeat, bottom, cover );
-    @include scale(0, 0, 100%, 5rem);
+    @include sizing(0, 0, 100%, 5rem);
     @include respond(phone) { height: 10rem }
     top: 0;
   }
 
   &__content {
-    @include typography($white, 200, 1rem, none, none, normal);
-    @include position(flex, column, none, center, none);
-    padding: 8rem 0rem 4rem 0rem;
-    margin: 0 3rem;
-
+    @include typography($white, 200, 1rem, initial, initial, normal);
+    @include layout(flex, column, initial, center, initial);
+    @include sizing(0 3rem, 8rem 0rem 4rem 0rem, initial, initial);
     @include respond(phone) {
-      flex-direction: column;
-      align-items: center;
-      width: 100vw;
-      margin: 0;
-      padding-top: 8rem;
+      @include sizing(0, 8rem 0 0 0, 100vw, initial);
+      @include layout(inherit, column, inherit, center, initial);
     }
 
     @include respond(tab-port) {
-      padding: 10rem 2rem;
-      margin: 0;
-      @include position(flex, row, flex-start, none, none);
+      @include sizing(0, 10rem 2rem, initial, initial);
+      @include layout(flex, row, flex-start, initial, initial);
     }
     @include respond(tab-land) { padding: 15rem 4rem }
   }
   &__list {
-    display: inline;
-    justify-content: center;
+    @include layout(inline, unset, center, initial, initial);
     width: 100vw;
-
-    @include respond(tab-port) {
-      display: inline-flex;
-      justify-content: end;
-    }
+    @include respond(tab-port) { @include layout(inline-flex, unset, center, initial, initial);}
   }
   &__description {
-    margin: 2rem 0 4rem;
-    width: 90vw;
+    @include sizing(2rem 2rem 4rem, unset, 90vw, initial);
     @include respond(tab-land) {
       max-width: 35vw;
       margin-right: 10rem;
@@ -58,17 +46,13 @@
     @include respond(ultra-wide) { margin-right: 20rem }
   }
   &__icon {
-    width: 3rem;
+    @include sizing(0 0.5rem 0 0, inherit, 3rem, initial);
     transition: all 0.3s;
-    margin-right: 0.5rem;
 
     &:hover {
       padding: 0.2rem;
       cursor: pointer;
-
-      &:active {
-        padding: 0.4rem;
-      }
+      &:active { padding: 0.4rem; }
     }
   }
 

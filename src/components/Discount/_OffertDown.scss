@@ -1,28 +1,29 @@
 @import '../../variables/background';
 @import '../../variables/breakpoints';
 @import '../../variables/elements';
-@import '../../variables/position';
-@import '../../variables/scale';
+@import '../../variables/layout';
+@import '../../variables/sizing';
 @import '../../variables/typography';
 @import '../../variables/variables';
 
 .offert-down {
-  @include position(flex, column, center, center, none);
-  @include respond(phone) { @include position(inherit, row, flex-start, stretch, none) }
+  @include layout(flex, column, center, center, initial);
+  @include respond(phone) { @include layout(inherit, row, flex-start, stretch, initial) }
 
   &__image {
     margin-bottom: 4rem;
     @include OffertImageStyle;
+    border-bottom-left-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
     @include respond(phone) {
+      @include sizing(0, unset, 50%, initial);
       box-shadow: none;
-      margin: 0;
       border-radius: 0;
-      width: 50%;
     }
   }
 
   &__section {
-    @include position(flex, column, center, center, none);
+    @include layout(flex, column, center, center, initial);
     color: $white;
     flex: 1;
 
@@ -41,7 +42,7 @@
     padding: 2rem;
     border-top-right-radius: 1.5rem;
     border-top-left-radius: 1.5rem;
-    @include position(flex, column, center, center, none);
+    @include layout(flex, column, center, center, initial);
 
     @include respond(phone) {
       box-shadow: none;
@@ -52,10 +53,10 @@
     }
 
     &__content {
-      @include position(flex, column, center, center, none);
+      @include layout(flex, column, center, center, initial);
       text-align: center;
       @include respond(phone) {
-        @include position(flex, column, flex-start, flex-start, none);
+        @include layout(flex, column, flex-start, flex-start, initial);
         text-align: start;
         min-width: 25vw;
         margin: 1rem 0 1rem 3rem;
@@ -66,7 +67,7 @@
     }
   }
   &__heading {
-    @include typography($white, 600, 1.5rem, none, none, normal);
+    @include typography($white, 600, 1.5rem, initial, initial, normal);
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -91,5 +92,8 @@
     }
   }
 
-  &__button { @include OffertButton }
+  &__button { 
+    @include OffertButton;
+    
+  }
 }

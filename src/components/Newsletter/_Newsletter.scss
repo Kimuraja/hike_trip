@@ -1,19 +1,19 @@
 @import '../../variables/background';
 @import '../../variables/breakpoints';
 @import '../../variables/elements';
-@import '../../variables/position';
-@import '../../variables/scale';
+@import '../../variables/layout';
+@import '../../variables/sizing';
 @import '../../variables/typography';
 @import '../../variables/variables';
 
 .newsletter {
-  @include position(flex, column, center, center, relative);
+  @include layout(flex, column, center, center, relative);
   text-align: center;
   background-color: $light-orange;
   z-index: 1;
   &__space-top {
     @include background(url("/src/media/shape_top_v2.png"), no-repeat, bottom, cover);
-    @include scale(0, 0, 100%, 8rem);
+    @include sizing(0, 0, 100%, 8rem);
     top: 0;
     z-index: 2;
     @include respond(phone) {
@@ -23,14 +23,13 @@
 
   &__space-bottom {
     @include background(url("src/media/shape_bottom.png"), no-repeat, none, cover);
-    @include scale(0, 0, 100%, 5rem);
+    @include sizing(0, 0, 100%, 5rem);
     z-index: 2;
   }
 
   &__content {
-    @include position(flex, column, center, center, none);
-    width: 100%;
-    margin: 8rem;
+    @include layout(flex, column, center, center, none);
+    @include sizing(8rem, inherit, 100%, initial);
   }
 
     &__heading {
@@ -55,7 +54,7 @@
       display: inline-flex;
       margin-top: 1rem;
       max-width: 100%;
-
+      
       @include respond(phone) {
         flex-direction: column;
         margin-top: 3rem;
@@ -66,32 +65,31 @@
         border: none;
         border-radius: .2rem;
         z-index: 1;
-        padding: .9rem 1rem;
-        width: 60vw;
         font-weight: 200;
+        @include sizing(unset, .9rem 1rem, 60vw, initial);
         @include respond(phone) { width: 40vw; }
         @include respond(tab-port) {
-          padding: .9rem 10rem .9rem 2rem;
+          @include sizing(unset, .9rem 10rem .9rem 2rem, 40vw, initial);
           border-radius: 10rem;
-          width: 40vw;
         }
       }
       
       &--button {
+        @include sizing(1rem 0 0 0, .9rem 1.8rem, initial, initial);
+        @include typography($white, 700, .9rem, uppercase, unset, .2rem);
         position: static;
         right: 0;
         top: 0;
-        padding: .9rem 1.8rem;
         border-radius: 50rem;
-        text-transform: uppercase;
         border: none;
-        letter-spacing: .2rem;
         background-color: $dark-grey;
-        color: $white;
-        font-size: .9rem;
-        margin-top: 1rem;
-        font-weight: 700;
+        transition: all .2s;
         z-index: 2;
+
+      &:hover {
+        padding: .9rem 2.5rem;
+        &:active { padding: .9rem 2.2rem }
+      }
 
         @include respond(tab-port) {
           position: absolute;

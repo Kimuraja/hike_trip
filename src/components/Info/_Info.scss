@@ -1,8 +1,8 @@
 @import '../../variables/background';
 @import '../../variables/breakpoints';
 @import '../../variables/elements';
-@import '../../variables/position';
-@import '../../variables/scale';
+@import '../../variables/layout';
+@import '../../variables/sizing';
 @import '../../variables/typography';
 @import '../../variables/variables';
 
@@ -13,13 +13,13 @@
       position: absolute;
       top: 0;
       z-index: 2;
-      @include scale(0, 0, 100%, 5rem);
+      @include sizing(0, 0, 100%, 5rem);
       @include respond(phone) { height: 10rem }
       @include respond(tab-port) { height: 12rem }
     }
 
     &__content {
-      @include position(flex, column, center, center, relative);
+      @include layout(flex, column, center, center, relative);
       text-align: center;
       background-color: #99928d;
       color: $white;
@@ -29,33 +29,31 @@
       z-index: 1;
       text-align: center;
       margin: 12rem 0 6rem 0;
-      @include position(flex, column, center, center, relative);
+      @include layout(flex, column, center, center, relative);
       @include respond(phone) { margin: 18rem 0 6rem 0 }
       @include respond(tab-land) { margin: 22rem 0 10rem 0 }
     }
     
     &__heading {
-      @include typography($white, bold, 2.5rem, none, none, 0.1rem);
+      @include typography($white, bold, 2.5rem, initial, initial, 0.1rem);
       @include respond(phone) {
-        @include typography($white, 600, 4rem, none, none, normal);
+        @include typography($white, 600, 4rem, initial, initial, normal);
         padding: 0 2rem;
       }
     }
 
     &__description {
-      @include typography($white, 50, 1rem, none, none, 0.1rem);
-      margin-top: 2rem;
-      width: 80%;
+      @include typography($white, 50, 1rem, initial, initial, 0.1rem);
+      @include sizing(2rem 0 0 0, unset, 80%, initial);
       @include respond(phone) {
         width: 55%;
         font-size: 1.5rem;
       }
     }
     &__leaf {
+      @include sizing(unset, unset, auto, 60vh);
       position: absolute;
       float: left;
-      height: 60vw;
-      width: auto;
       left: -2rem;
       z-index: -1;
       @include respond(phone) {
@@ -67,8 +65,8 @@
       @include respond(ultra-wide) { left: -20vw; }
     }
     &__space-bottom {
-      @include background(url("../../media/shape_bottom.png"), no-repeat, none, cover);
-      @include scale(0, 0, 100%, 5rem);
+      @include background(url("../../media/shape_bottom.png"), no-repeat, initial, cover);
+      @include sizing(0, 0, 100%, 5rem);
       @include respond(phone) { height: 8rem }
       bottom: 0;
       z-index: 2;

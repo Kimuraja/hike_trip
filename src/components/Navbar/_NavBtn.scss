@@ -1,14 +1,14 @@
 @import "../../variables/background";
 @import "../../variables/breakpoints";
 @import "../../variables/elements";
-@import "../../variables/position";
-@import "../../variables/scale";
+@import "../../variables/layout";
+@import "../../variables/sizing";
 @import "../../variables/typography";
 @import "../../variables/variables";
 
 .navigation {
   &__button {
-    @include position(flex, none, flex-end, flex-end, absolute);
+    @include layout(flex, initial, flex-end, flex-end, absolute);
     cursor: pointer;
     width: 100%;
     top: 1.5rem;
@@ -28,6 +28,7 @@
   }
 
   &__menu {
+    @include sizing(unset, unset, 100vw, 0);
     background: rgba(255, 255, 255, 0.52);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(20px);
@@ -37,36 +38,30 @@
     position: absolute;
     top: -100vh;
     left: 0;
-    width: 100vw;
-    height: 0;
     z-index: 5000;
     overflow: hidden;
     transition: top .9s ease, height .9s ease;
 
     &.active {
       top: 0;
-      height: 90vh;
+      height: 100vh;
     }
   }
 
   &__item {
-    @include position(inline-flex, column, center, center, none);
-    height: 100%;
-    width: 100%;
+    @include layout(inline-flex, column, center, center, initial);
+    @include sizing(unset, unset, 100%, 100%);
     list-style: none;
   }
 
   &__link {
-    @include typography($dark-orange, 700, 2.5rem, none, none, none);
+    @include typography($dark-orange, 700, 2.5rem, initial, initial, initial);
     padding: 0.5rem 2rem;
 
     &:hover { 
       @include ButtonHoverAnimation;
-      border-radius: 1rem;
     }
     
-    @include respond(phone) {
-      font-size: 4rem;
-    }
+    @include respond(phone) { font-size: 4rem; }
   }
 }

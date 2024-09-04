@@ -93,4 +93,10 @@
       max-width: 50vw;
     }
   }
+  &__attribution {
+    padding: 0 1rem;
+    font-size: 1.5rem;
+    color: $white;
+    font-weight: 600;
+  }
 }

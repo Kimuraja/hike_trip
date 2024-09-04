@@ -9,6 +9,7 @@
 .navigation {
   &__button {
     @include position(flex, none, flex-end, flex-end, absolute);
+    cursor: pointer;
     width: 100%;
     top: 1.5rem;
     right: 1.5rem;

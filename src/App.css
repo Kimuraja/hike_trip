@@ -12650,13 +12650,18 @@ header .row .nav-list__link:hover::before {
   justify-content: center;
   align-items: center;
   position: none;
+  text-align: center;
 }
 @media only screen and (min-width: 37.5em) {
   .offert-down__textarea__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: none;
+    text-align: start;
     min-width: 25vw;
     margin: 1rem 0 1rem 3rem;
-    text-align: start;
-    align-items: start;
   }
 }
 @media only screen and (min-width: 56.25em) {
@@ -12827,7 +12832,23 @@ header .row .nav-list__link:hover::before {
   }
 }
 .offert-up__textarea__content {
-  padding-left: 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: none;
+}
+@media only screen and (min-width: 37.5em) {
+  .offert-up__textarea__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: none;
+    text-align: start;
+    padding-left: 1rem;
+  }
 }
 @media only screen and (min-width: 68.75em) {
   .offert-up__textarea__content {

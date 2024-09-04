@@ -33,12 +33,12 @@
   }
 
   &__heading {
-    @include typography($light-orange, 800, 2.5rem, uppercase, none, unset);
+    @include typography($light-orange, 800, 1.5rem, uppercase, none, unset);
     @include layout(flex, row, center, flex-end, none);
     @include sizing(0, 1.5rem, 100%, initial);
     font-style: italic;
     text-shadow: 0.3rem -0.2rem 5px rgba(84, 82, 79, 0.5);
-
+    @include respond(phone) { font-size: 3rem}
     @include respond(tab-port) {
       @include layout(flex, column, flex-end, end, none);
       @include sizing(0 2rem 0 0, unset, 100%, initial);

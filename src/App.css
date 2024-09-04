@@ -13212,7 +13212,7 @@ header .row .nav-list__link:hover::before {
   font-family: "Open Sans", sans-serif;
   color: #deb37e;
   font-weight: 800;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   text-transform: uppercase;
   text-decoration: none;
   letter-spacing: unset;
@@ -13227,6 +13227,11 @@ header .row .nav-list__link:hover::before {
   height: initial;
   font-style: italic;
   text-shadow: 0.3rem -0.2rem 5px rgba(84, 82, 79, 0.5);
+}
+@media only screen and (min-width: 37.5em) {
+  .explore__heading {
+    font-size: 3rem;
+  }
 }
 @media only screen and (min-width: 56.25em) {
   .explore__heading {
